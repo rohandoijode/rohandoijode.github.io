@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- ...existing code... -->
+  <title>Someone Like You | Guitar Chords</title>
+  <!-- ...existing code... -->
+</head>
+<body>
+<div data-include="../components/navbar.html"></div>
+<main class="container">
+  <nav class="text-sm mb-4">
+    <a href="./index.html" class="text-indigo-500 hover:underline">← Back to Songs</a>
+  </nav>
+  <h1 class="text-3xl font-bold mb-2">Someone Like You</h1>
+  <p class="mb-2 text-gray-600">Artist: Adele</p>
+    <div class="mb-2 flex gap-4 text-sm text-gray-500">
+      <span>Difficulty: Intermediate</span>
+      <span>Genre: Pop</span>
+      <span>Capo: None</span>
+    </div>
+    <div class="mb-6">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/hLQl3WQQoQ0" title="Someone Like You - Adele" frameborder="0" allowfullscreen class="rounded-xl shadow"></iframe>
+    </div>
+  <div class="mb-4">
+    <h2 class="text-xl font-semibold mb-2">Chords</h2>
+    <div class="flex flex-wrap gap-2 mb-2">
+      <span class="inline-block bg-gray-100 rounded px-2 py-1">A</span>
+      <span class="inline-block bg-gray-100 rounded px-2 py-1">E</span>
+      <span class="inline-block bg-gray-100 rounded px-2 py-1">F#m</span>
+      <span class="inline-block bg-gray-100 rounded px-2 py-1">D</span>
+    </div>
+    <div class="mb-4">
+      <h3 class="font-semibold mb-1">Guitar Chord Diagrams</h3>
+      <style>
+        .chord-hover { position: relative; display: inline-block; margin: 0 8px; cursor: pointer; }
+        .chord-diagram { display: none; position: absolute; top: 2em; left: 50%; transform: translateX(-50%); z-index: 10; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 140px; height: 90px; }
+        .chord-hover:hover .chord-diagram { display: block; }
+      </style>
+      <div class="flex gap-4">
+        <span class="chord-hover">A
+          <span class="chord-diagram"><div id="chart-a"></div></span>
+        </span>
+        <span class="chord-hover">E
+          <span class="chord-diagram"><div id="chart-e"></div></span>
+        </span>
+        <span class="chord-hover">F#m
+          <span class="chord-diagram"><div id="chart-fsharpm"></div></span>
+        </span>
+        <span class="chord-hover">D
+          <span class="chord-diagram"><div id="chart-d"></div></span>
+        </span>
+      </div>
+      <script src="https://omnibrain.github.io/svguitar/js/svguitar.umd.js"></script>
+      <script>
+        function drawChord(id, title, fingers, open, muted, barres = []) {
+          new svguitar.SVGuitarChord(id)
+            .configure({ title, color: '#4F46E5', width: 130, height: 80 })
+            .chord({
+              fingers,
+              barres,
+              baseFret: 1,
+              muted,
+              open
+            })
+            .draw();
+        }
+        drawChord('#chart-a', 'A', [ { fret: 2, string: 2 }, { fret: 2, string: 3 }, { fret: 2, string: 4 } ], [1,5], [6]);
+        drawChord('#chart-e', 'E', [ { fret: 1, string: 3 }, { fret: 2, string: 4 }, { fret: 2, string: 5 } ], [1,6], []);
+        drawChord('#chart-fsharpm', 'F#m', [ { fret: 2, string: 1 }, { fret: 2, string: 2 }, { fret: 2, string: 3 }, { fret: 4, string: 4 }, { fret: 4, string: 5 } ], [], []);
+        drawChord('#chart-d', 'D', [ { fret: 2, string: 1 }, { fret: 2, string: 3 }, { fret: 3, string: 2 } ], [4], [5,6]);
+      </script>
+      </div>
+    </div>
+    <div class="mb-4">
+      <h3 class="font-semibold mb-1">Keyboard Chord Diagrams</h3>
+      <div class="flex gap-4">
+    <img src="https://www.scales-chords.com/chordimages/A_piano.png" alt="A Keyboard" class="w-16 h-16">
+    <img src="https://www.scales-chords.com/chordimages/E_piano.png" alt="E Keyboard" class="w-16 h-16">
+    <img src="https://www.scales-chords.com/chordimages/Fsharp_m_piano.png" alt="F#m Keyboard" class="w-16 h-16">
+    <img src="https://www.scales-chords.com/chordimages/D_piano.png" alt="D Keyboard" class="w-16 h-16">
+      </div>
+    </div>
+      <div class="mb-4">
+        <h3 class="font-semibold mb-1">Strumming Pattern</h3>
+        <div class="bg-gray-50 rounded p-2 text-gray-700">Down Down Up Up Down Up</div>
+      </div>
+  </div>
+  <div class="mb-4">
+    <h2 class="text-xl font-semibold mb-2">Lyrics</h2>
+    <pre class="whitespace-pre-line text-gray-800 bg-gray-50 rounded p-4">I heard that you're settled down, that you found a girl and you're married now...</pre>
+  </div>
+    <div class="mb-6">
+      <h3 class="font-semibold mb-2">Rate this song</h3>
+      <div class="flex gap-1 mb-2" id="rating-stars">
+        <span style="font-size:2rem;cursor:pointer;" onclick="rateSong(1)">&#9733;</span>
+        <span style="font-size:2rem;cursor:pointer;" onclick="rateSong(2)">&#9733;</span>
+        <span style="font-size:2rem;cursor:pointer;" onclick="rateSong(3)">&#9733;</span>
+        <span style="font-size:2rem;cursor:pointer;" onclick="rateSong(4)">&#9733;</span>
+        <span style="font-size:2rem;cursor:pointer;" onclick="rateSong(5)">&#9733;</span>
+      </div>
+      <div id="rating-result" class="text-sm text-gray-500"></div>
+      <script>
+        function rateSong(stars) {
+          document.getElementById('rating-result').textContent = `You rated this song ${stars} star${stars>1?'s':''}.`;
+        }
+      </script>
+    </div>
+    <div class="mb-6">
+      <h3 class="font-semibold mb-2">Comments</h3>
+      <form id="comment-form" class="flex flex-col gap-2">
+        <input type="text" id="comment-name" placeholder="Your name" class="border rounded p-2" required />
+        <textarea id="comment-text" placeholder="Your comment" class="border rounded p-2" rows="2" required></textarea>
+        <button type="submit" class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">Post Comment</button>
+      </form>
+      <div id="comments-list" class="mt-2 space-y-2"></div>
+      <script>
+        const form = document.getElementById('comment-form');
+        const list = document.getElementById('comments-list');
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const name = document.getElementById('comment-name').value.trim();
+          const text = document.getElementById('comment-text').value.trim();
+          if (name && text) {
+            const div = document.createElement('div');
+            div.className = "border rounded p-2 bg-gray-50";
+            div.innerHTML = `<strong>${name}</strong>: <span>${text}</span>`;
+            list.prepend(div);
+            form.reset();
+          }
+        });
+      </script>
+    </div>
+</main>
+<div data-include="../components/footer.html"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

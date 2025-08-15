@@ -11,23 +11,49 @@
 <div data-include="../components/navbar.html"></div>
 <main class="container">
   <h1 class="text-2xl font-bold mb-4">Projects</h1>
+  <input id="project-search" type="text" placeholder="Search projects..." class="border p-2 mb-4 w-full" />
   <div id="projects" class="grid"></div>
+
+  <!-- GitHub Repos Section -->
+  <section class="mt-12">
+    <h2 class="text-xl font-semibold mb-4">My GitHub Repositories</h2>
+    <div id="github-repos" class="grid">
+      <!-- Example cards, edit links later -->
+      <a href="https://github.com/yourusername/awesome-repo" target="_blank" class="card hover:shadow-xl transition">
+        <h3 class="font-bold">Awesome Repo</h3>
+        <p>A creative project from my GitHub.</p>
+        <small>github.com/yourusername/awesome-repo</small>
+      </a>
+      <a href="https://github.com/yourusername/another-repo" target="_blank" class="card hover:shadow-xl transition">
+        <h3 class="font-bold">Another Repo</h3>
+        <p>Something cool I built and shared.</p>
+        <small>github.com/yourusername/another-repo</small>
+      </a>
+      <!-- Add more as needed -->
+    </div>
+  </section>
+
+  <!-- Medium Posts Section -->
+  <section class="mt-12">
+    <h2 class="text-xl font-semibold mb-4">My Medium Posts</h2>
+    <div id="medium-posts" class="grid">
+      <!-- Example cards, edit links later -->
+      <a href="https://medium.com/@yourusername/my-first-post" target="_blank" class="card hover:shadow-xl transition">
+        <h3 class="font-bold">How I Built My Portfolio</h3>
+        <p>Sharing my journey and tips for building a personal site.</p>
+        <small>medium.com/@yourusername/my-first-post</small>
+      </a>
+      <a href="https://medium.com/@yourusername/creative-coding" target="_blank" class="card hover:shadow-xl transition">
+        <h3 class="font-bold">Creative Coding with JavaScript</h3>
+        <p>Exploring fun JS projects and creative ideas.</p>
+        <small>medium.com/@yourusername/creative-coding</small>
+      </a>
+      <!-- Add more as needed -->
+    </div>
+  </section>
 </main>
 <div data-include="../components/footer.html"></div>
-<script>
-fetch('../data/projects.json')
-  .then(r => r.json())
-  .then(list => {
-    const c = document.getElementById('projects');
-    c.innerHTML = list.map(p =>
-      `<a class="card" href="${p.url}" target="_blank">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <small>${(p.tags||[]).join(', ')}</small>
-      </a>`
-    ).join('');
-  });
-</script>
+<script src="../assets/js/projects.js"></script>
 <script src="../assets/js/main.js"></script>
 </body>
 </html>

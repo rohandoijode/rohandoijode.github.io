@@ -1,7 +1,9 @@
+/* Tailwind base, components, utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom styles */
 body {
   font-family: sans-serif;
 }
@@ -25,3 +27,4 @@ body {
 .card:hover {
   transform: translateY(-2px);
 }
+/* ...add more custom classes as needed... */

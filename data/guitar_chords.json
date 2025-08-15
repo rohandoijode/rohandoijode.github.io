@@ -2,11 +2,71 @@
   {
     "title": "Wonderwall",
     "artist": "Oasis",
-    "chords": ["Em7", "G", "Dsus4", "A7sus4"]
+    "chords": ["Em7", "G", "Dsus4", "A7sus4"],
+    "lyrics": "Today is gonna be the day that they're gonna throw it back to you...",
+    "slug": "wonderwall"
   },
   {
     "title": "Hotel California",
     "artist": "Eagles",
-    "chords": ["Bm", "F#", "A", "E", "G", "D", "Em"]
+    "chords": ["Bm", "F#", "A", "E", "G", "D", "Em"],
+    "lyrics": "On a dark desert highway, cool wind in my hair...",
+    "slug": "hotel-california"
+  },
+  {
+    "title": "Let It Be",
+    "artist": "The Beatles",
+    "chords": ["C", "G", "Am", "F"],
+    "lyrics": "When I find myself in times of trouble, Mother Mary comes to me...",
+    "slug": "let-it-be"
+  },
+  {
+    "title": "Shape of You",
+    "artist": "Ed Sheeran",
+    "chords": ["C#m", "F#m", "A", "E"],
+    "lyrics": "The club isn't the best place to find a lover so the bar is where I go...",
+    "slug": "shape-of-you"
+  },
+  {
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "chords": ["G", "Em", "C", "D"],
+    "lyrics": "I found a love for me, darling just dive right in and follow my lead...",
+    "slug": "perfect"
+  },
+  {
+    "title": "Tears in Heaven",
+    "artist": "Eric Clapton",
+    "chords": ["A", "E", "F#m", "D", "A/E"],
+    "lyrics": "Would you know my name if I saw you in heaven...",
+    "slug": "tears-in-heaven"
+  },
+  {
+    "title": "Hey There Delilah",
+    "artist": "Plain White T's",
+    "chords": ["D", "F#m", "Bm", "G", "A"],
+    "lyrics": "Hey there Delilah, what's it like in New York City...",
+    "slug": "hey-there-delilah"
+  },
+  {
+    "title": "Counting Stars",
+    "artist": "OneRepublic",
+    "chords": ["Am", "C", "G", "F"],
+    "lyrics": "Lately, I've been, I've been losing sleep, dreaming about the things that we could be...",
+    "slug": "counting-stars"
+  },
+  {
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "chords": ["A", "E", "F#m", "D"],
+    "lyrics": "I heard that you're settled down, that you found a girl and you're married now...",
+    "slug": "someone-like-you"
+  },
+  {
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "chords": ["Am", "G", "C", "F"],
+    "lyrics": "I was scared of dentists and the dark, I was scared of pretty girls and starting conversations...",
+    "slug": "riptide"
   }
 ]
