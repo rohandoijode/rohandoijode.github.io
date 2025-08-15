@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+<div data-include="../components/navbar.html"></div>
+<main class="container">
+  <h1 class="text-2xl font-bold mb-4">Projects</h1>
+  <div id="projects" class="grid"></div>
+</main>
+<div data-include="../components/footer.html"></div>
+<script>
+fetch('../data/projects.json')
+  .then(r => r.json())
+  .then(list => {
+    const c = document.getElementById('projects');
+    c.innerHTML = list.map(p =>
+      `<a class="card" href="${p.url}" target="_blank">
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <small>${(p.tags||[]).join(', ')}</small>
+      </a>`
+    ).join('');
+  });
+</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

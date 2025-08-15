@@ -1,296 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan Doijode - Portfolio</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5974826855904767"
-     crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Vintage Global Styles */
-        body {
-            margin: 0;
-            font-family: 'EB Garamond', serif;
-            background: #f5ecd7 url('https://www.transparenttextures.com/patterns/old-mathematics.png');
-            color: #3e2c1c;
-            line-height: 1.7;
-            transition: all 0.4s ease-in-out;
-        }
-
-        a {
-            text-decoration: underline;
-            color: #7c4a03;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #b97a56;
-        }
-
-        /* Header Styling */
-        header {
-            background: linear-gradient(90deg, #e7d3b3 0%, #c9b18a 100%);
-            color: #3e2c1c;
-            padding: 24px 40px 18px 40px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 4px double #b97a56;
-            box-shadow: 0 2px 10px rgba(120, 90, 40, 0.08);
-            font-family: 'Special Elite', cursive;
-            letter-spacing: 1.5px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 0 #fffbe6, 2px 2px 0 #b97a56;
-        }
-
-        header nav a {
-            color: #7c4a03;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin: 0 18px;
-            font-size: 1em;
-            font-family: 'Special Elite', cursive;
-            border-bottom: 2px dotted transparent;
-            padding-bottom: 2px;
-        }
-
-        header nav a:hover {
-            color: #b97a56;
-            border-bottom: 2px dotted #b97a56;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Container Styles */
-        .container {
-            max-width: 900px;
-            margin: 120px auto 60px auto;
-            padding: 36px 32px;
-            background: #fffbe6;
-            border-radius: 14px;
-            border: 2px solid #c9b18a;
-            box-shadow: 0 0 40px rgba(120, 90, 40, 0.10);
-            transition: box-shadow 0.4s ease-in-out;
-            font-family: 'EB Garamond', serif;
-        }
-
-        .container:hover {
-            box-shadow: 0 0 60px rgba(120, 90, 40, 0.18);
-        }
-
-        section {
-            margin-bottom: 54px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .section-title {
-            font-size: 2.3em;
-            margin-bottom: 24px;
-            color: #7c4a03;
-            border-bottom: 2px dashed #b97a56;
-            padding-bottom: 8px;
-            font-weight: 600;
-            font-family: 'Special Elite', cursive;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, #f5ecd7 60%, #e7d3b3 100%);
-            box-shadow: 0 1px 0 #fffbe6;
-        }
-
-        .content {
-            padding: 0 12px;
-            color: #4d3b23;
-            font-size: 1.13em;
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.5em;
-            color: #b97a56;
-            margin-bottom: 12px;
-            font-family: 'Special Elite', cursive;
-            letter-spacing: 1px;
-        }
-
-        .portfolio-item p {
-            margin-top: 12px;
-            color: #3e2c1c;
-            font-size: 1.07em;
-        }
-
-        /* Blog Section */
-        .blog-entry h3 {
-            font-size: 1.4em;
-            color: #b97a56;
-            margin-bottom: 10px;
-            font-family: 'Special Elite', cursive;
-        }
-
-        .blog-entry p {
-            margin-bottom: 8px;
-        }
-
-        .blog-entry a {
-            font-size: 1.1em;
-            color: #7c4a03;
-            text-decoration: underline;
-            font-weight: bold;
-            position: relative;
-            font-family: 'EB Garamond', serif;
-        }
-
-        .blog-entry a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background-color: #b97a56;
-            transition: width 0.3s ease;
-        }
-
-        .blog-entry a:hover::after {
-            width: 100%;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            font-size: 1.08em;
-            color: #4d3b23;
-            margin-bottom: 24px;
-            font-family: 'EB Garamond', serif;
-        }
-
-        footer {
-            text-align: center;
-            padding: 32px;
-            background: #e7d3b3;
-            color: #7c4a03;
-            font-size: 1em;
-            border-top: 2px double #b97a56;
-            font-family: 'Special Elite', cursive;
-            letter-spacing: 1px;
-        }
-
-        footer a {
-            color: #7c4a03;
-            text-decoration: underline;
-        }
-
-        footer a:hover {
-            color: #b97a56;
-            text-decoration: underline;
-        }
-
-        /* Smooth Section Transitions */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Vintage List Styles */
-        ul {
-            list-style-type: square;
-            padding-left: 22px;
-        }
-
-        li {
-            margin-bottom: 6px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohan Doijode</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+<body class="h-full flex flex-col bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800 font-sans">
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <h1>Rohan Doijode</h1>
-        <nav>
-            <a href="#work">Work</a>
-            <a href="#leisure">Leisure</a>
-            <a href="#guitar-chords">Guitar Chords</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <div data-include="components/navbar.html"></div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Work Section -->
-        <section id="work">
-            <div class="section-title">Work</div>
-            <div class="content">
-                <div class="portfolio-item">
-                    <h3>Data Engineer</h3>
-                    <p>Hello! I'm Rohan Doijode, a passionate Data Engineer working on building robust data pipelines and scalable analytics solution.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-6 py-16 text-center">
+    <h1 class="text-5xl font-extrabold mb-6 text-gray-900 tracking-tight transition-all duration-500 hover:scale-105">
+      Welcome to <span class="text-indigo-500">Rohan Codes</span> ✨
+    </h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+      Dive into my world of <span class="font-medium text-indigo-500">projects</span>, 
+      <span class="font-medium text-green-500">travel adventures</span>, 
+      and <span class="font-medium text-pink-500">guitar chord collections</span>.
+    </p>
 
-        <!-- Leisure Section -->
-        <section id="leisure">
-            <div class="section-title">Leisure</div>
-            <div class="content">
-                <div class="blog-entry">
-                    <h3>Travel Blogs</h3>
-                    <p>Explore my travel experiences:</p>
-                    <ul>
-                        <li><a href="blog1.html" target="_blank">Panshet Camping</a></li>
-                        <li><a href="blog2.html" target="_blank">Goa Trip</a></li>
-                    </ul>
-                </div>
-                <div class="blog-entry">
-                    <h3>Photography</h3>
-                    <p>Check out some of my favorite shots on <a href="https://github.com/rohandoijode/photography" target="_blank">GitHub</a>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Guitar Chords Section -->
-        <section id="guitar-chords">
-            <div class="section-title">Guitar Chords</div>
-            <div class="content">
-                <ul>
-                    <li><a href="guitar-chords/Sapphire.html" target="_blank">Sapphire - Ed Sheeran</a></li>
-                    <!-- Add more songs here -->
-                </ul>
-                <p>More songs coming soon.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="section-title">Contact</div>
-            <div class="content contact-info">
-                <p>Feel free to reach out via email at <a href="mailto:doijoderohan882@gmail.com">doijoderohan882@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/rohandoijode" target="_blank">LinkedIn</a>.</p>
-            </div>
-        </section>
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a href="#projects" class="px-6 py-3 bg-indigo-500 text-white rounded-full shadow-md hover:bg-indigo-600 transition-all duration-300">
+        Explore Projects 🚀
+      </a>
+      <a href="#travel" class="px-6 py-3 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600 transition-all duration-300">
+        Travel Stories 🌏
+      </a>
+      <a href="#music" class="px-6 py-3 bg-pink-500 text-white rounded-full shadow-md hover:bg-pink-600 transition-all duration-300">
+        Guitar Chords 🎸
+      </a>
     </div>
+  </main>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Rohan Doijode. All rights reserved. | <a href="https://github.com/rohandoijode">Back to GitHub</a></p>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-4 text-center">
+    <div data-include="components/footer.html"></div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>

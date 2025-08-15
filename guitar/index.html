@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guitar Chords</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+<div data-include="../components/navbar.html"></div>
+<main class="container">
+  <h1 class="text-2xl font-bold mb-4">Guitar Chords</h1>
+  <input id="search" type="text" placeholder="Search by title or artist..." class="border p-2 mb-4 w-full" />
+  <div id="songs" class="grid"></div>
+</main>
+<div data-include="../components/footer.html"></div>
+<script>
+fetch('../data/guitar_chords.json')
+  .then(r => r.json())
+  .then(list => {
+    const c = document.getElementById('songs');
+    const s = document.getElementById('search');
+    const render = items => {
+      c.innerHTML = items.map(song =>
+        `<div class="card">
+          <h3>${song.title}</h3>
+          <p><strong>Artist:</strong> ${song.artist}</p>
+          <p><strong>Chords:</strong> ${song.chords.join(', ')}</p>
+        </div>`
+      ).join('');
+    };
+    render(list);
+    s.addEventListener('input', () => {
+      const q = s.value.toLowerCase();
+      render(list.filter(song =>
+        song.title.toLowerCase().includes(q) ||
+        song.artist.toLowerCase().includes(q)
+      ));
+    });
+  });
+</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
