@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>glamUp by Amruta</title>
+  <meta name="robots" content="noindex" />
+
+  <style>
+    :root{
+      --bg:#fff8fc;
+      --bg-soft:#fff1f7;
+      --bg-card:rgba(255,255,255,0.86);
+      --text:#2c1f2b;
+      --muted:#7c6677;
+      --primary:#ff4f9a;
+      --primary-soft:rgba(255,79,154,0.12);
+      --secondary:#8f5bff;
+      --accent:#ffb703;
+      --dark:#1a1118;
+      --white:#ffffff;
+      --line:rgba(255,79,154,0.08);
+      --shadow:0 12px 30px rgba(255, 79, 154, 0.12);
+      --shadow-lg:0 20px 55px rgba(82, 28, 68, 0.14);
+      --radius:22px;
+      --radius-lg:30px;
+      --transition:0.35s ease;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:"Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,79,154,0.13), transparent 30%),
+        radial-gradient(circle at top right, rgba(143,91,255,0.14), transparent 28%),
+        linear-gradient(180deg, #fff8fc 0%, #fffdfd 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      max-width:1140px;
+      margin:auto;
+      padding:0 20px;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(255,255,255,0.7);
+      border-bottom:1px solid rgba(255,255,255,0.65);
+    }
+
+    .nav-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      font-size:1.1rem;
+      font-weight:800;
+      color:var(--dark);
+      letter-spacing:0.2px;
+      white-space:nowrap;
+    }
+
+    .brand span{
+      color:var(--primary);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:var(--text);
+      font-size:0.94rem;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:var(--transition);
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      background:var(--bg-soft);
+      color:var(--primary);
+      transform:translateY(-1px);
+    }
+
+    section{
+      padding:34px 0;
+    }
+
+    .hero{
+      padding:68px 0 26px;
+    }
+
+    .hero-box{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:28px;
+      align-items:center;
+      background:linear-gradient(135deg, rgba(255,79,154,0.10), rgba(143,91,255,0.09));
+      border:1px solid rgba(255,255,255,0.82);
+      border-radius:34px;
+      padding:44px;
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .hero-box::before{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:rgba(255,183,3,0.12);
+      top:-85px;
+      right:-45px;
+      filter:blur(10px);
+      z-index:-1;
+      animation:floatBlob 7s ease-in-out infinite;
+    }
+
+    .hero-box::after{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:rgba(255,79,154,0.12);
+      bottom:-70px;
+      left:-30px;
+      filter:blur(10px);
+      z-index:-1;
+      animation:floatBlob 8s ease-in-out infinite reverse;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:8px 14px;
+      background:rgba(255,79,154,0.12);
+      color:var(--primary);
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.84rem;
+      margin-bottom:16px;
+      box-shadow:0 8px 18px rgba(255,79,154,0.06);
+    }
+
+    .hero h1{
+      font-size:clamp(2.3rem, 4vw, 4.3rem);
+      line-height:1.04;
+      margin:0 0 14px;
+      color:var(--dark);
+      max-width:12ch;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .hero p{
+      font-size:1.04rem;
+      color:var(--muted);
+      line-height:1.75;
+      margin:0 0 22px;
+      max-width:620px;
+    }
+
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:24px;
+    }
+
+    .pill{
+      background:#fff;
+      border:1px solid rgba(255,79,154,0.12);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:600;
+      box-shadow:0 6px 16px rgba(0,0,0,0.04);
+      transition:var(--transition);
+    }
+
+    .pill:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:13px 20px;
+      border-radius:999px;
+      font-size:0.95rem;
+      font-weight:700;
+      transition:var(--transition);
+      box-shadow:0 10px 24px rgba(0,0,0,0.08);
+      border:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 30px rgba(0,0,0,0.10);
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg, var(--primary), #ff76b4);
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:linear-gradient(90deg, #25D366, #1ebe57);
+      color:#fff;
+    }
+
+    .btn-dark{
+      background:var(--dark);
+      color:#fff;
+    }
+
+    .hero-card{
+      background:var(--bg-card);
+      backdrop-filter:blur(10px);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      z-index:2;
+      border:1px solid rgba(255,255,255,0.75);
+      animation:floatCard 5s ease-in-out infinite;
+    }
+
+    .hero-card h3{
+      margin:0 0 10px;
+      font-size:1.42rem;
+      color:var(--dark);
+    }
+
+    .hero-card p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.72;
+    }
+
+    .mini-stats{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+    }
+
+    .stat{
+      background:linear-gradient(180deg, #fff, #fff5fa);
+      border-radius:18px;
+      padding:16px;
+      text-align:center;
+      border:1px solid rgba(255,79,154,0.10);
+      transition:var(--transition);
+    }
+
+    .stat:hover{
+      transform:translateY(-4px);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.12rem;
+      color:var(--primary);
+      margin-bottom:6px;
+    }
+
+    .stat span{
+      font-size:0.89rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:22px;
+    }
+
+    .section-head h2{
+      margin:0 0 10px;
+      font-size:2rem;
+      color:var(--dark);
+    }
+
+    .section-head p{
+      max-width:700px;
+      margin:auto;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .about-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .about-card,
+    .card,
+    .highlight{
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+
+    .about-card{
+      padding:24px;
+      transition:var(--transition);
+    }
+
+    .about-card:hover{
+      transform:translateY(-4px);
+    }
+
+    .about-card h3{
+      margin:0 0 12px;
+      color:var(--primary);
+      font-size:1.15rem;
+    }
+
+    .about-card p{
+      color:var(--muted);
+      line-height:1.75;
+      margin:0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, #fff, #fff7fb);
+      padding:24px;
+      text-align:left;
+      transition:var(--transition);
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 18px 38px rgba(255,79,154,0.14);
+    }
+
+    .card .icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.4rem;
+      margin-bottom:16px;
+      background:linear-gradient(135deg, rgba(255,79,154,0.18), rgba(143,91,255,0.18));
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.08rem;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+    }
+
+    .highlight{
+      padding:20px;
+      border-left:5px solid var(--primary);
+      transition:var(--transition);
+    }
+
+    .highlight:hover{
+      transform:translateY(-5px);
+    }
+
+    .highlight h4{
+      margin:0 0 8px;
+      font-size:1rem;
+      color:var(--dark);
+    }
+
+    .highlight p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:0.94rem;
+    }
+
+    #gallery{
+      padding-top:14px;
+    }
+
+    .gallery-wrap{
+      background:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,241,247,0.55));
+      border:1px solid rgba(255,255,255,0.7);
+      border-radius:30px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:16px;
+    }
+
+    .gallery-grid figure{
+      margin:0;
+      border-radius:20px;
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      background:#ddd;
+      box-shadow:var(--shadow);
+      transform:translateY(0);
+      transition:transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .gallery-grid figure:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 34px rgba(59, 21, 49, 0.14);
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      aspect-ratio:3/4;
+      transition:transform 0.55s ease;
+      display:block;
+    }
+
+    .gallery-grid img.landscape{
+      aspect-ratio:4/3;
+    }
+
+    .gallery-grid figure:hover img{
+      transform:scale(1.08);
+    }
+
+    figcaption{
+      position:absolute;
+      inset:auto 0 0 0;
+      background:linear-gradient(to top, rgba(26,17,24,0.82), transparent);
+      color:#fff;
+      font-size:0.86rem;
+      padding:28px 12px 10px;
+      text-align:center;
+      letter-spacing:0.2px;
+      transition:opacity 0.3s ease;
+    }
+
+    .cta{
+      margin-top:12px;
+      padding-top:24px;
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:#fff;
+      border-radius:32px;
+      padding:38px 26px;
+      text-align:center;
+      box-shadow:0 18px 40px rgba(143,91,255,0.24);
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.12);
+      top:-70px;
+      right:-60px;
+      z-index:-1;
+    }
+
+    .cta-box h2{
+      margin:0 0 12px;
+      font-size:2rem;
+      color:#fff;
+    }
+
+    .cta-box p{
+      max-width:720px;
+      margin:0 auto 22px;
+      line-height:1.75;
+      opacity:0.96;
+    }
+
+    .cta-box .links{
+      justify-content:center;
+    }
+
+    footer{
+      text-align:center;
+      padding:26px 20px 34px;
+      color:#786c78;
+      font-size:0.95rem;
+    }
+
+    footer strong{
+      color:var(--primary);
+    }
+
+    .lightbox{
+      display:none;
+      position:fixed;
+      z-index:9999;
+      inset:0;
+      background:rgba(0,0,0,0.92);
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:85%;
+      border-radius:14px;
+      box-shadow:0 16px 40px rgba(0,0,0,0.3);
+      animation:zoomIn 0.25s ease;
+    }
+
+    .close{
+      position:absolute;
+      top:18px;
+      right:24px;
+      color:#fff;
+      font-size:34px;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:34px;
+      color:#fff;
+      background:rgba(255,255,255,0.14);
+      padding:10px 14px;
+      border-radius:50%;
+      cursor:pointer;
+      user-select:none;
+      transition:var(--transition);
+    }
+
+    .nav:hover{
+      background:rgba(255,255,255,0.22);
+    }
+
+    .prev{ left:20px; }
+    .next{ right:20px; }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes floatCard{
+      0%,100%{ transform:translateY(0px); }
+      50%{ transform:translateY(-6px); }
+    }
+
+    @keyframes floatBlob{
+      0%,100%{ transform:translateY(0px) translateX(0px); }
+      50%{ transform:translateY(10px) translateX(-8px); }
+    }
+
+    @keyframes zoomIn{
+      from{ opacity:0; transform:scale(0.96); }
+      to{ opacity:1; transform:scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+      }
+      .reveal{
+        opacity:1 !important;
+        transform:none !important;
+      }
+    }
+
+    @media (max-width: 980px){
+      .hero-box,
+      .about-box{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        max-width:none;
+      }
+    }
+
+    @media (max-width: 860px){
+      .hero{
+        padding-top:44px;
+      }
+
+      .hero-box{
+        padding:26px;
+        border-radius:28px;
+      }
+
+      .nav-wrap{
+        flex-direction:column;
+      }
+
+      .nav-links{
+        justify-content:center;
+      }
+
+      section{
+        padding:28px 0;
+      }
+
+      .mini-stats{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        padding:0 16px;
+      }
+
+      .hero-box{
+        gap:22px;
+      }
+
+      .hero p,
+      .section-head p,
+      .about-card p,
+      .card p,
+      .highlight p,
+      .cta-box p{
+        font-size:0.96rem;
+      }
+
+      .links{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .mini-stats{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-wrap{
+        padding:14px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .nav{
+        font-size:28px;
+        padding:8px 12px;
+      }
+    }
+
+    @media (max-width: 420px){
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand">✨ <span>glamUp</span> by Amruta</div>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero reveal">
+      <div class="hero-box">
+        <div>
+          <div class="tag">Soft Glam • Bridal Beauty • Elegant Occasion Looks</div>
+          <h1>Glow with confidence at every event with <span>glamUp by Amruta</span></h1>
+          <p>
+            From timeless bridal beauty to modern glam transformations, Amruta creates makeup looks
+            that feel elegant, flattering, and picture-perfect. Whether it’s your big day, a festive celebration,
+            or a special occasion, your look will be crafted to match your style and make you shine.
+          </p>
+
+          <div class="hero-points">
+            <div class="pill">💄 Bridal Makeup</div>
+            <div class="pill">✨ Party & Occasion Glam</div>
+            <div class="pill">💇 Hair Styling</div>
+            <div class="pill">📸 Camera-Ready Finish</div>
+          </div>
+
+          <div class="links">
+            <a class="btn btn-primary" href="https://instagram.com/bhaktis_makeup" target="_blank">
+              📸 View Instagram
+            </a>
+            <a class="btn btn-secondary" href="https://wa.me/919359230587" target="_blank">
+              💬 WhatsApp Now
+            </a>
+            <a class="btn btn-dark" href="https://maps.app.goo.gl/5HVbCGuP8tkGKNba7" target="_blank">
+              📍 Location
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Your beauty, enhanced beautifully</h3>
+          <p>
+            Signature looks designed to bring out your best features with radiant skin, balanced glam,
+            and a polished finish that looks stunning in person and in photos.
+          </p>
+
+          <div class="mini-stats">
+            <div class="stat">
+              <strong>Bridal</strong>
+              <span>Graceful, timeless looks</span>
+            </div>
+            <div class="stat">
+              <strong>Glam</strong>
+              <span>Bold and beautiful finish</span>
+            </div>
+            <div class="stat">
+              <strong>Occasion</strong>
+              <span>Perfect for every celebration</span>
+            </div>
+            <div class="stat">
+              <strong>Styling</strong>
+              <span>Elegant hair pairing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <h2>Why choose glamUp by Amruta?</h2>
+        <p>
+          A makeup experience focused on elegance, comfort, and confidence — so you not only look stunning,
+          but also feel like the best version of yourself.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <div class="about-card">
+          <h3>Beauty with personality</h3>
+          <p>
+            Every face tells a different story. Amruta creates looks that complement your outfit, skin tone,
+            event vibe, and personal style — from subtle sophistication to full glam radiance.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Made to stand out</h3>
+          <p>
+            Clean blending, glowing skin, defined eyes, and a finish that photographs beautifully —
+            perfect for weddings, receptions, parties, festive events, and memorable celebrations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <div class="section-head">
+        <h2>Services</h2>
+        <p>
+          Customized beauty services designed to give you a polished, confident, and head-turning look.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">👰</div>
+          <h3>Bridal Makeup</h3>
+          <p>
+            Elegant bridal looks crafted for your special day with flawless finish, glow, and timeless charm.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✨</div>
+          <h3>Party & Occasion Makeup</h3>
+          <p>
+            Perfect for receptions, engagements, festivals, birthdays, and events where you want to shine.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💇</div>
+          <h3>Hair Styling</h3>
+          <p>
+            Soft curls, sleek buns, festive styles, and elegant finishing touches to complete the look.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌸</div>
+          <h3>Soft Glam Looks</h3>
+          <p>
+            Fresh, glowing, and refined makeup for clients who love classy beauty with a modern touch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="section-head">
+        <h2>What makes the look special?</h2>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight">
+          <h4>Glow that looks natural</h4>
+          <p>Radiant skin-focused makeup that feels fresh, balanced, and elegant.</p>
+        </div>
+        <div class="highlight">
+          <h4>Perfectly styled for your event</h4>
+          <p>Looks are thoughtfully tailored for bridal, festive, traditional, and glam occasions.</p>
+        </div>
+        <div class="highlight">
+          <h4>Picture-ready finish</h4>
+          <p>Beautiful results that stand out both in real life and in your event photos.</p>
+        </div>
+        <div class="highlight">
+          <h4>Confidence in every detail</h4>
+          <p>From the base to the final touch, every step is designed to make you feel stunning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="reveal">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <p>
+          A glimpse of beautiful transformations, festive glam, and graceful bridal-inspired looks.
+        </p>
+      </div>
+
+      <div class="gallery-wrap">
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/look1.jpeg" alt="Makeup look 1">
+            <figcaption>Radiant Glam Finish</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look11.jpeg" alt="Makeup look 2">
+            <figcaption>Soft Bridal Elegance</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look12.jpeg" alt="Makeup look 3">
+            <figcaption>Classic Celebration Look</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look2.jpeg" class="landscape" alt="Makeup look 4">
+            <figcaption>Fresh Festive Beauty</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look9.jpeg" alt="Makeup look 5">
+            <figcaption>Glow With Confidence</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look4.jpeg" alt="Makeup look 6">
+            <figcaption>Elegant Evening Glam</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look5.jpeg" alt="Makeup look 7">
+            <figcaption>Refined Soft Glam</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look6.jpeg" alt="Makeup look 8">
+            <figcaption>Timeless Beauty Look</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look7.jpeg" alt="Makeup look 9">
+            <figcaption>Polished Party Make Up</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look8.jpeg" alt="Makeup look 10">
+            <figcaption>Graceful Festive Styling</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look3.jpeg" alt="Makeup look 11">
+            <figcaption>Soft and Glowing Finish</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look13.jpeg" alt="Makeup look 12">
+            <figcaption>Elegant Transformation</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look14.jpeg" class="landscape" alt="Makeup look 13">
+            <figcaption>Make Up That Photographs Beautifully</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look15.jpeg" alt="Makeup look 14">
+            <figcaption>Signature Glam Touch</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look16.jpeg" alt="Makeup look 14">
+            <figcaption>Timeless Look</figcaption>
+          </figure>
+          <figure>
+            <img src="images/look17.jpeg" alt="Makeup look 14">
+            <figcaption>Little Krishna</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal" id="contact">
+      <div class="cta-box">
+        <h2>Ready to book your glam session?</h2>
+        <p>
+          Let your next look be unforgettable. For bridal bookings, occasion makeup, or styling inquiries,
+          connect with <strong>glamUp by Amruta</strong> and get your perfect beauty look started.
+        </p>
+
+        <div class="links">
+          <a class="btn btn-secondary" href="https://wa.me/919359230587" target="_blank">
+            💬 Chat on WhatsApp
+          </a>
+          <a class="btn btn-primary" href="https://instagram.com/bhaktis_makeup" target="_blank">
+            📸 Follow on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> <strong>glamUp by Amruta</strong> — Bridal • Glam • Occasion Makeup
+  </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" alt="Expanded gallery image">
+    <div class="nav prev">&#10094;</div>
+    <div class="nav next">&#10095;</div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const images = document.querySelectorAll('.gallery-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    document.querySelector('.close').onclick = (e) => {
+      e.stopPropagation();
+      lightbox.style.display = 'none';
+    };
+
+    document.querySelector('.next').onclick = (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    };
+
+    document.querySelector('.prev').onclick = (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    };
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === "Escape") lightbox.style.display = 'none';
+        if (e.key === "ArrowRight") {
+          currentIndex = (currentIndex + 1) % images.length;
+          lightboxImg.src = images[currentIndex].src;
+        }
+        if (e.key === "ArrowLeft") {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          lightboxImg.src = images[currentIndex].src;
+        }
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
