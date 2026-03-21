@@ -10,7 +10,7 @@
     :root{
       --bg:#fff9fc;
       --bg-soft:#fff3f8;
-      --surface:rgba(255,255,255,0.84);
+      --surface:rgba(255,255,255,0.86);
       --surface-strong:#ffffff;
       --text:#2b1d28;
       --muted:#786675;
@@ -114,21 +114,21 @@
     }
 
     section{
-      padding:30px 0;
+      padding:28px 0;
     }
 
     .hero{
-      padding:56px 0 22px;
+      padding:34px 0 12px;
     }
 
     .hero-box{
       position:relative;
       overflow:hidden;
       display:grid;
-      grid-template-columns:1.08fr 0.92fr;
-      gap:28px;
+      grid-template-columns:1.05fr 0.95fr;
+      gap:22px;
       align-items:center;
-      padding:46px;
+      padding:34px;
       border-radius:var(--radius-lg);
       background:linear-gradient(135deg, rgba(255,79,154,0.11), rgba(143,91,255,0.09));
       border:1px solid rgba(255,255,255,0.82);
@@ -166,7 +166,7 @@
 
     .tag{
       display:inline-block;
-      margin-bottom:16px;
+      margin-bottom:14px;
       padding:8px 14px;
       border-radius:999px;
       background:rgba(255,79,154,0.12);
@@ -177,12 +177,12 @@
     }
 
     .hero h1{
-      margin:0 0 14px;
-      font-size:clamp(2.35rem, 5vw, 4.5rem);
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4.8vw, 4rem);
       line-height:1.02;
       letter-spacing:-0.02em;
       color:var(--dark);
-      max-width:11ch;
+      max-width:12ch;
     }
 
     .hero h1 span{
@@ -193,18 +193,18 @@
     }
 
     .hero p{
-      margin:0 0 22px;
+      margin:0 0 18px;
       max-width:620px;
       color:var(--muted);
-      line-height:1.75;
-      font-size:1.02rem;
+      line-height:1.72;
+      font-size:1rem;
     }
 
     .hero-points{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-bottom:24px;
+      margin-bottom:20px;
     }
 
     .pill{
@@ -264,14 +264,14 @@
 
     .hero-side{
       display:grid;
-      gap:16px;
+      gap:14px;
     }
 
     .hero-card{
       background:var(--surface);
       backdrop-filter:blur(10px);
       border-radius:28px;
-      padding:24px;
+      padding:22px;
       border:1px solid rgba(255,255,255,0.8);
       box-shadow:var(--shadow);
       animation:floatCard 5s ease-in-out infinite;
@@ -279,15 +279,15 @@
 
     .hero-card h3{
       margin:0 0 10px;
-      font-size:1.32rem;
+      font-size:1.28rem;
       color:var(--dark);
     }
 
     .hero-card p{
-      margin:0 0 16px;
+      margin:0 0 14px;
       color:var(--muted);
-      line-height:1.72;
-      font-size:0.98rem;
+      line-height:1.7;
+      font-size:0.97rem;
     }
 
     .mini-stats{
@@ -300,7 +300,7 @@
       background:linear-gradient(180deg, #fff, #fff7fb);
       border:1px solid rgba(255,79,154,0.10);
       border-radius:18px;
-      padding:16px;
+      padding:14px;
       text-align:center;
       transition:var(--transition);
     }
@@ -313,47 +313,45 @@
       display:block;
       margin-bottom:6px;
       color:var(--primary);
-      font-size:1.08rem;
+      font-size:1.04rem;
     }
 
     .stat span{
       color:var(--muted);
-      font-size:0.88rem;
-      line-height:1.5;
+      font-size:0.86rem;
+      line-height:1.45;
     }
 
-    .hero-note{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:16px 18px;
-      background:rgba(255,255,255,0.78);
-      border:1px solid rgba(255,255,255,0.8);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-note-badge{
-      width:42px;
-      height:42px;
-      border-radius:14px;
+    .hero-preview{
       display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, rgba(255,79,154,0.18), rgba(143,91,255,0.18));
-      font-size:1.2rem;
-      flex:0 0 auto;
+      grid-template-columns:repeat(3, 1fr);
+      gap:10px;
     }
 
-    .hero-note p{
+    .hero-preview figure{
       margin:0;
-      font-size:0.93rem;
-      color:var(--muted);
-      line-height:1.6;
+      overflow:hidden;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      background:#eadfe6;
+      min-height:130px;
+    }
+
+    .hero-preview img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 20%;
+      transition:transform 0.5s ease;
+    }
+
+    .hero-preview figure:hover img{
+      transform:scale(1.05);
     }
 
     .section-head{
       text-align:center;
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .section-head h2{
@@ -366,18 +364,17 @@
       max-width:720px;
       margin:auto;
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.72;
     }
 
-    /* PREMIUM GALLERY FIRST */
     #gallery{
-      padding-top:18px;
+      padding-top:10px;
     }
 
     .gallery-shell{
       position:relative;
       border-radius:32px;
-      padding:22px;
+      padding:18px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,241,247,0.72));
       border:1px solid rgba(255,255,255,0.82);
@@ -396,8 +393,8 @@
     .gallery-grid{
       display:grid;
       grid-template-columns:1.15fr 0.85fr 0.85fr;
-      grid-auto-rows:250px;
-      gap:16px;
+      grid-auto-rows:220px;
+      gap:14px;
     }
 
     .gallery-grid figure{
@@ -428,6 +425,7 @@
       width:100%;
       height:100%;
       object-fit:cover;
+      object-position:center 20%;
       transition:transform 0.55s ease;
       background:#f0e5eb;
     }
@@ -447,7 +445,6 @@
       letter-spacing:0.2px;
     }
 
-    /* CONTENT SECTIONS */
     .about-box{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -626,6 +623,9 @@
       border-radius:14px;
       box-shadow:0 16px 40px rgba(0,0,0,0.3);
       animation:zoomIn 0.25s ease;
+      object-fit:cover;
+      object-position:center 20%;
+      touch-action:pan-y;
     }
 
     .close{
@@ -670,6 +670,12 @@
       transform:translateY(0);
     }
 
+    /* Face positioning helpers */
+    .face-top{ object-position:center 18% !important; }
+    .face-center{ object-position:center center !important; }
+    .face-left{ object-position:40% center !important; }
+    .face-right{ object-position:60% center !important; }
+
     @keyframes floatCard{
       0%,100%{ transform:translateY(0); }
       50%{ transform:translateY(-6px); }
@@ -709,7 +715,7 @@
 
       .gallery-grid{
         grid-template-columns:1fr 1fr;
-        grid-auto-rows:240px;
+        grid-auto-rows:220px;
       }
 
       .gallery-grid figure.featured,
@@ -730,16 +736,16 @@
       }
 
       .hero{
-        padding-top:42px;
+        padding-top:24px;
       }
 
       .hero-box{
-        padding:26px;
+        padding:24px;
         border-radius:28px;
       }
 
       section{
-        padding:26px 0;
+        padding:24px 0;
       }
 
       .mini-stats{
@@ -762,7 +768,7 @@
       }
 
       .hero h1{
-        font-size:clamp(2rem, 9vw, 3rem);
+        font-size:clamp(1.9rem, 9vw, 3rem);
       }
 
       .hero p,
@@ -785,6 +791,14 @@
 
       .mini-stats{
         grid-template-columns:1fr;
+      }
+
+      .hero-preview{
+        grid-template-columns:repeat(3, 1fr);
+      }
+
+      .hero-preview figure{
+        min-height:100px;
       }
 
       .gallery-shell{
@@ -812,7 +826,11 @@
     @media (max-width: 420px){
       .gallery-grid{
         grid-template-columns:1fr;
-        grid-auto-rows:260px;
+        grid-auto-rows:250px;
+      }
+
+      .hero-preview{
+        grid-template-columns:1fr 1fr 1fr;
       }
     }
   </style>
@@ -838,11 +856,11 @@
       <div class="hero-box">
         <div>
           <div class="tag">Soft Glam • Bridal Beauty • Elegant Occasion Looks</div>
-          <h1>Luxury beauty looks with <span>glamUp by Amruta</span></h1>
+          <h1>See the glow first with <span>glamUp by Amruta</span></h1>
           <p>
-            From timeless bridal beauty to modern glam transformations, Amruta creates looks
-            that feel elegant, flattering, and picture-perfect. Whether it’s your big day,
-            a festive celebration, or a special occasion, your makeup is designed to reflect your style and glow beautifully.
+            Bridal, festive, reception, and occasion makeup designed to look elegant,
+            flattering, and camera-ready. The goal is simple: help clients see beautiful results quickly
+            and feel confident booking right away.
           </p>
 
           <div class="hero-points">
@@ -853,11 +871,11 @@
           </div>
 
           <div class="links">
-            <a class="btn btn-primary" href="https://instagram.com/bhaktis_makeup" target="_blank" rel="noopener">
-              📸 View Instagram
-            </a>
             <a class="btn btn-secondary" href="https://wa.me/919359230587" target="_blank" rel="noopener">
               💬 WhatsApp Now
+            </a>
+            <a class="btn btn-primary" href="https://instagram.com/bhaktis_makeup" target="_blank" rel="noopener">
+              📸 View Instagram
             </a>
             <a class="btn btn-dark" href="https://maps.app.goo.gl/5HVbCGuP8tkGKNba7" target="_blank" rel="noopener">
               📍 Location
@@ -867,10 +885,9 @@
 
         <div class="hero-side">
           <div class="hero-card">
-            <h3>Your beauty, elevated beautifully</h3>
+            <h3>Results that feel premium</h3>
             <p>
-              Signature looks crafted with radiant skin, soft blending, elegant detail,
-              and a polished finish that looks stunning both in person and in photos.
+              Elegant skin, refined eye makeup, graceful styling, and a polished finish that looks beautiful both in person and in photographs.
             </p>
 
             <div class="mini-stats">
@@ -893,11 +910,17 @@
             </div>
           </div>
 
-          <div class="hero-note">
-            <div class="hero-note-badge">✨</div>
-            <p>
-              Book for bridal, festive, reception, engagement, and party looks with styling that feels refined, fresh, and memorable.
-            </p>
+          <!-- visible images immediately in first view -->
+          <div class="hero-preview">
+            <figure>
+              <img src="images/look1.jpeg" alt="Bridal makeup preview" class="face-top" width="500" height="700" fetchpriority="high" decoding="async">
+            </figure>
+            <figure>
+              <img src="images/look11.jpeg" alt="Soft glam preview" class="face-top" width="500" height="700" fetchpriority="high" decoding="async">
+            </figure>
+            <figure>
+              <img src="images/look9.jpeg" alt="Occasion makeup preview" class="face-center" width="500" height="700" fetchpriority="high" decoding="async">
+            </figure>
           </div>
         </div>
       </div>
@@ -907,92 +930,92 @@
       <div class="section-head">
         <h2>Signature Gallery</h2>
         <p>
-          Explore premium bridal and glam transformations first — because your work should speak before anything else.
+          Explore the work first — because users looking for a makeup artist usually want to see results before anything else.
         </p>
       </div>
 
       <div class="gallery-shell">
         <div class="gallery-grid">
-          <figure class="featured">
-            <img src="images/look1.jpeg" alt="Radiant bridal makeup look"
+          <figure class="featured" data-photo="look1">
+            <img src="images/look1.jpeg" alt="Radiant bridal glamour" class="face-top"
                  width="900" height="1200" fetchpriority="high" decoding="async">
             <figcaption>Radiant bridal glamour</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look11.jpeg" alt="Soft bridal elegance"
+          <figure data-photo="look11">
+            <img src="images/look11.jpeg" alt="Soft bridal elegance" class="face-top"
                  width="700" height="900" fetchpriority="high" decoding="async">
             <figcaption>Soft bridal elegance</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look12.jpeg" alt="Classic occasion makeup"
+          <figure data-photo="look12">
+            <img src="images/look12.jpeg" alt="Classic celebration look" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Classic celebration look</figcaption>
           </figure>
 
-          <figure class="wide">
-            <img src="images/look14.jpeg" alt="Makeup look for photoshoots and events"
+          <figure class="wide" data-photo="look14">
+            <img src="images/look14.jpeg" alt="Picture-perfect premium finish" class="face-center"
                  width="1200" height="800" loading="lazy" decoding="async">
             <figcaption>Picture-perfect premium finish</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look2.jpeg" alt="Fresh festive beauty look"
+          <figure data-photo="look2">
+            <img src="images/look2.jpeg" alt="Fresh festive beauty" class="face-center"
                  width="900" height="700" loading="lazy" decoding="async">
             <figcaption>Fresh festive beauty</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look9.jpeg" alt="Elegant glam makeover"
+          <figure data-photo="look9">
+            <img src="images/look9.jpeg" alt="Glow with confidence" class="face-center"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Glow with confidence</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look4.jpeg" alt="Elegant evening glam"
+          <figure data-photo="look4">
+            <img src="images/look4.jpeg" alt="Elegant evening glam" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Elegant evening glam</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look5.jpeg" alt="Refined soft glam look"
+          <figure data-photo="look5">
+            <img src="images/look5.jpeg" alt="Refined soft glam" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Refined soft glam</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look6.jpeg" alt="Timeless beauty makeup style"
+          <figure data-photo="look6">
+            <img src="images/look6.jpeg" alt="Timeless beauty look" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Timeless beauty look</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look7.jpeg" alt="Polished party makeup"
+          <figure data-photo="look7">
+            <img src="images/look7.jpeg" alt="Polished party makeup" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Polished party makeup</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look8.jpeg" alt="Graceful festive styling"
+          <figure data-photo="look8">
+            <img src="images/look8.jpeg" alt="Graceful festive styling" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Graceful festive styling</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look3.jpeg" alt="Soft glowing finish"
+          <figure data-photo="look3">
+            <img src="images/look3.jpeg" alt="Soft and glowing finish" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Soft and glowing finish</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look13.jpeg" alt="Elegant makeup transformation"
+          <figure data-photo="look13">
+            <img src="images/look13.jpeg" alt="Elegant transformation" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Elegant transformation</figcaption>
           </figure>
 
-          <figure>
-            <img src="images/look15.jpeg" alt="Signature glam makeup touch"
+          <figure data-photo="look15">
+            <img src="images/look15.jpeg" alt="Signature glam touch" class="face-top"
                  width="700" height="900" loading="lazy" decoding="async">
             <figcaption>Signature glam touch</figcaption>
           </figure>
@@ -1004,7 +1027,7 @@
       <div class="section-head">
         <h2>Services</h2>
         <p>
-          Tailored beauty services designed to give you a polished, confident, and unforgettable presence.
+          Tailored beauty services designed to give you a polished, confident, and unforgettable look.
         </p>
       </div>
 
@@ -1055,7 +1078,7 @@
         <div class="about-card">
           <h3>Beauty with personality</h3>
           <p>
-            Every face tells a different story. Amruta creates looks that complement your skin tone,
+            Every face tells a different story. Amruta creates looks that complement skin tone,
             outfit, event mood, and personal style — from subtle sophistication to full glam radiance.
           </p>
         </div>
@@ -1133,25 +1156,70 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const images = document.querySelectorAll(".gallery-grid img");
+    const galleryFigures = Array.from(document.querySelectorAll(".gallery-grid figure"));
+    const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
 
     let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-    images.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-        currentIndex = index;
-        document.body.style.overflow = "hidden";
-      });
-    });
+    function syncLightboxImage() {
+      const currentImg = galleryImages[currentIndex];
+      lightboxImg.src = currentImg.src;
+      lightboxImg.alt = currentImg.alt || "Expanded gallery image";
+      lightboxImg.style.objectPosition = getComputedStyle(currentImg).objectPosition;
+    }
 
-    function closeLightbox() {
+    function openLightbox(index, updateUrl = true) {
+      currentIndex = index;
+      syncLightboxImage();
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+
+      if (updateUrl) {
+        const photoId = galleryFigures[currentIndex].dataset.photo;
+        const url = new URL(window.location.href);
+        url.searchParams.set("photo", photoId);
+        window.history.replaceState({}, "", url);
+      }
+    }
+
+    function closeLightbox(updateUrl = true) {
       lightbox.style.display = "none";
       document.body.style.overflow = "";
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("photo");
+        window.history.replaceState({}, "", url);
+      }
     }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      syncLightboxImage();
+
+      const photoId = galleryFigures[currentIndex].dataset.photo;
+      const url = new URL(window.location.href);
+      url.searchParams.set("photo", photoId);
+      window.history.replaceState({}, "", url);
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      syncLightboxImage();
+
+      const photoId = galleryFigures[currentIndex].dataset.photo;
+      const url = new URL(window.location.href);
+      url.searchParams.set("photo", photoId);
+      window.history.replaceState({}, "", url);
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => openLightbox(index));
+    });
 
     document.querySelector(".close").onclick = (e) => {
       e.stopPropagation();
@@ -1160,14 +1228,12 @@
 
     document.querySelector(".next").onclick = (e) => {
       e.stopPropagation();
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
+      showNext();
     };
 
     document.querySelector(".prev").onclick = (e) => {
       e.stopPropagation();
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
+      showPrev();
     };
 
     lightbox.addEventListener("click", (e) => {
@@ -1177,16 +1243,24 @@
     document.addEventListener("keydown", (e) => {
       if (lightbox.style.display === "flex") {
         if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowRight") {
-          currentIndex = (currentIndex + 1) % images.length;
-          lightboxImg.src = images[currentIndex].src;
-        }
-        if (e.key === "ArrowLeft") {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          lightboxImg.src = images[currentIndex].src;
-        }
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
       }
     });
+
+    lightboxImg.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxImg.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) > 50) {
+        if (swipeDistance < 0) showNext();
+        else showPrev();
+      }
+    }, { passive: true });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1197,6 +1271,22 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    /* open shared URL like ?photo=look1 */
+    window.addEventListener("load", () => {
+      const url = new URL(window.location.href);
+      const photoParam = url.searchParams.get("photo");
+
+      if (photoParam) {
+        const targetIndex = galleryFigures.findIndex(
+          figure => figure.dataset.photo === photoParam
+        );
+
+        if (targetIndex !== -1) {
+          openLightbox(targetIndex, false);
+        }
+      }
+    });
   </script>
 
 </body>
